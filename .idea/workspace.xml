@@ -17,11 +17,12 @@
       <file leaf-file-name="Explorer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="48" column="15" lean-forward="true" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+            <state relative-caret-position="272">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1813#1819#0" expanded="true" />
+                <element signature="e#2008#2020#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -305,12 +306,12 @@
       <workItem from="1521922442776" duration="1566000" />
       <workItem from="1521969031817" duration="5793000" />
       <workItem from="1522260516002" duration="194000" />
-      <workItem from="1522260850404" duration="432000" />
+      <workItem from="1522260850404" duration="773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7985000" />
+    <option name="totallyTimeSpent" value="8326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="676" y="0" width="697" height="735" extended-state="0" />
@@ -363,6 +364,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1813#1819#0" expanded="true" />
+            <element signature="e#2008#2020#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -446,6 +448,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1813#1819#0" expanded="true" />
+            <element signature="e#2008#2020#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -603,11 +606,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" column="15" lean-forward="true" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+        <state relative-caret-position="272">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1813#1819#0" expanded="true" />
+            <element signature="e#2008#2020#0" expanded="true" />
           </folding>
         </state>
       </provider>

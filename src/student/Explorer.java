@@ -45,6 +45,9 @@ public class Explorer {
         path.add(state.getCurrentLocation());
         while(state.getDistanceToTarget() > 0){
 
+            //List of neighbours
+            List <NodeStatus> neighbours =  new ArrayList<NodeStatus>(state.getNeighbours());
+
         }
         //TODO:
     }
