@@ -53,6 +53,27 @@ public class Explorer {
                 seen.add(state.getCurrentLocation());
             }
 
+            //Create list of unvisited neighbours
+            List<NodeStatus> temp = new ArrayList<NodeStatus>();
+            for (NodeStatus n: neighbours){
+                if (!seen.contains(n.getId())){
+                    temp.add(n);
+                }
+            }
+            //From temp list check distance to orb
+            if(temp.size() > 0){
+                NodeStatus nextMove;
+
+                nextMove = temp.get(0);
+                for (NodeStatus i: temp){
+                    if(i.getDistanceToTarget() < nextMove.getDistanceToTarget()){
+                        nextMove = i;
+                    }
+                }
+                
+            }
+
+
         }
         //TODO:
     }
