@@ -3,11 +3,8 @@ package student;
 import game.EscapeState;
 import game.ExplorationState;
 import game.NodeStatus;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Stack;
+import java.util.Arrays;
+import java.util.*;
 
 public class Explorer {
 
@@ -42,10 +39,12 @@ public class Explorer {
      * @param state the information available at the current state
      */
     public void explore(ExplorationState state) {
-        Stack<Long> visited = new Stack<>();
-
+        //Init Stack for current path and Set for visited locations
+        Stack<Long> path = new Stack<>();
+        Set <Long> seen = new HashSet<Long>();
+        path.add(state.getCurrentLocation());
         while(state.getDistanceToTarget() > 0){
-            List <NodeStatus> neighbours = (ArrayList) state.getNeighbours();
+
         }
         //TODO:
     }
