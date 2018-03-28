@@ -76,12 +76,11 @@ public class Explorer {
                 //Add current location to Stack of visited locations
                 path.add(nextMove.getId());
             }else{
-                
+                //If list is empty (there are no unvisited neighbours)
+                path.pop();
+                state.moveTo(path.peek());
             }
-
-
         }
-        //TODO:
     }
 
     /**
