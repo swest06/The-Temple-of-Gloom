@@ -48,6 +48,11 @@ public class Explorer {
             //List of neighbours
             List <NodeStatus> neighbours =  new ArrayList<NodeStatus>(state.getNeighbours());
 
+            //Add current location to Set
+            if (!seen.contains(state.getCurrentLocation())){
+                seen.add(state.getCurrentLocation());
+            }
+
         }
         //TODO:
     }
