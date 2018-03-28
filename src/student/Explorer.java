@@ -70,6 +70,12 @@ public class Explorer {
                         nextMove = i;
                     }
                 }
+                //Move to next unvisited location
+                state.moveTo(nextMove.getId());
+
+                //Add current location to Stack of visited locations
+                path.add(nextMove.getId());
+            }else{
                 
             }
 
