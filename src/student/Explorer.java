@@ -1,8 +1,7 @@
 package student;
 
-import game.EscapeState;
-import game.ExplorationState;
-import game.NodeStatus;
+import game.*;
+
 import java.util.Arrays;
 import java.util.*;
 
@@ -109,11 +108,66 @@ public class Explorer {
     public void escape(EscapeState state) {
 
         while (state.getCurrentNode() != state.getExit()){
+            //Assign current location to 'here'
+            Node here = state.getCurrentNode();
 
+            //Get neighbouring Nodes
+            Set<Node> neighbours = here.getNeighbours();
+
+            //Add neighbours to List
+            List<Node> neigh = new ArrayList<>();
+            neigh.addAll(here.getNeighbours());
+
+            Node node = neigh.get(0);
+            Set node2 = node.getNeighbours();
+
+            //Find route from exit
+            Stack<Node> stack = new Stack();
+            stack.push(state.getExit());
+            while (stack.peek() != state.getCurrentNode()){
+                stack.push(stack.peek().);
+            }
+
+//            boolean fin = false;
+//            while (!fin){
+//                for (Node n: neighbours){
+//
+//                }
+//            }
+
+//            System.out.println(here.getEdge(state.getExit()));
+
+//            System.out.println("1");
+//            Edge nextEdge = here.getEdge(here);
+//            System.out.println("2");
+//            Node nextMove = nextEdge.getSource();
+//            System.out.println("3");
+//            state.moveTo(nextMove);
+//            System.out.println(here.getEdge(here));
+
+//            System.out.println(state.getCurrentNode());
+//            System.out.println(state.getVertices().size());
 
 
         }
 
         //TODO: Escape from the cavern before time runs out
     }
+
+//    List<Node> route(Set<Node> neigh, EscapeState state){
+//        List<Node> r;
+//        boolean fin = false;
+//        while (!fin){
+//            for (Node n: neigh ){
+//                if (n == state.getExit());{
+//                    fin = true;
+//                    return r.add(n);
+//                }else{
+//
+//                    return r.add(route(n.getNeighbours(), state));
+//                }
+//            }
+//        }
+//        return ;
+//    }
 }
