@@ -107,6 +107,13 @@ public class Explorer {
      * @param state the information available at the current state
      */
     public void escape(EscapeState state) {
+
+        while (state.getCurrentNode() != state.getExit()){
+
+
+
+        }
+
         //TODO: Escape from the cavern before time runs out
     }
 }
