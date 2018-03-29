@@ -114,6 +114,10 @@ public class Explorer {
             //Get neighbouring Nodes
             Set<Node> neighbours = here.getNeighbours();
 
+            //List of visited nodes
+            List<Node> steppedOn = new ArrayList<>();
+            steppedOn.add(state.getCurrentNode());
+
             //Add neighbours to List
             List<Node> neigh = new ArrayList<>();
             neigh.addAll(here.getNeighbours());
@@ -124,9 +128,21 @@ public class Explorer {
             //Find route from exit
             Stack<Node> stack = new Stack();
             stack.push(state.getExit());
+            System.out.println("Finding route");
             while (stack.peek() != state.getCurrentNode()){
-                stack.push(stack.peek().);
+                List<Node> goodFriends = new ArrayList<>();
+                goodFriends.addAll(stack.peek().getNeighbours());
+
+                Node moveHere = goodFriends.get(0);
+                stack.push(moveHere);
             }
+
+            System.out.println("Route found");
+            while (state.getCurrentNode() != state.getExit()){
+                stack.pop();
+                state.moveTo(stack.peek());
+            }
+
 
 //            boolean fin = false;
 //            while (!fin){
