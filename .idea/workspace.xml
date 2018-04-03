@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffbb46d2-bcbb-45a9-be67-2ab08f432865" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tog/student/Explorer.class" afterPath="$PROJECT_DIR$/out/production/Tog/student/Explorer.class" />
       <change beforePath="$PROJECT_DIR$/src/student/Explorer.java" afterPath="$PROJECT_DIR$/src/student/Explorer.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +17,15 @@
       <file leaf-file-name="Explorer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
+            <state relative-caret-position="466">
+              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1750#1756#0" expanded="true" />
                 <element signature="e#1945#1957#0" expanded="true" />
                 <element signature="e#2254#2266#0" expanded="true" />
                 <element signature="e#4719#4725#0" expanded="true" />
+                <element signature="e#4858#4864#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,7 +94,7 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="-340">
               <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
@@ -342,12 +343,12 @@
       <workItem from="1521922442776" duration="1566000" />
       <workItem from="1521969031817" duration="5793000" />
       <workItem from="1522260516002" duration="194000" />
-      <workItem from="1522260850404" duration="20865000" />
+      <workItem from="1522260850404" duration="24147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28418000" />
+    <option name="totallyTimeSpent" value="31700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -403,6 +404,7 @@
             <element signature="e#1945#1957#0" expanded="true" />
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
+            <element signature="e#4858#4864#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -489,6 +491,7 @@
             <element signature="e#1945#1957#0" expanded="true" />
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
+            <element signature="e#4858#4864#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -646,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="-340">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
@@ -654,14 +657,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="112" column="8" lean-forward="false" selection-start-line="112" selection-start-column="8" selection-end-line="112" selection-end-column="8" />
+        <state relative-caret-position="466">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1750#1756#0" expanded="true" />
             <element signature="e#1945#1957#0" expanded="true" />
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
+            <element signature="e#4858#4864#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -110,13 +110,30 @@ public class Explorer {
         //Queue for BFS search
         LinkedList<Node> queue = new LinkedList<Node>();
         queue.add(state.getCurrentNode());
-        
-        //Simple array to hold visited Nodes
-        Node[] visited;
+
+        //Set to hold visited Nodes
+        LinkedList<Node> visited = new LinkedList<Node>();
 
         //Keep finding child Nodes until destination is reached
         while(!queue.isEmpty()) {
+            //Remove node from queue and add to visited list
+            Node node = queue.remove();
+            visited.add(node);
+            if (node == state.getExit()) {
+                System.out.println("Route found");
+                System.out.println(visited);
+                //DO SOMETHING
+//                for(Node tile: visited){
+//
+//                }
+            }
 
+            //Add neighbouring nodes to queue
+            for (Node node1: node.getNeighbours()) {
+
+                if(!visited.contains(node1)){
+                    queue.add(node1);
+            }
         }
 
 
