@@ -221,13 +221,20 @@ public class Explorer {
 //        return ;
 //    }
 
-    
+
     public static int [] dijkstraAlg(EscapeState state){
         //Initialize simple arrays to store distances and nodes
-        int[] distance =  new int[state.getVertices().size()];
-        int[] parent = new int[state.getVertices().size()];
+        LinkedHashMap<Integer, Integer> distance = new LinkedHashMap<Integer, Integer>(state.getVertices().size());
+        LinkedHashMap<Integer, Integer> parent = new LinkedHashMap<Integer, Integer>(state.getVertices().size());
+
+        //int[] distance =  new int[state.getVertices().size()];    //Might change these back
+        //int[] parent = new int[state.getVertices().size()];
         boolean [] visited = new boolean[state.getVertices().size()];
 
+        for (Node n: state.getVertices()){
+            distance.put(n.hashCode(), Integer.MAX_VALUE);
+        }
+        //distance[state.]
 
         //TODO: Write dijkstra algorithm to find shortest route
     }

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffbb46d2-bcbb-45a9-be67-2ab08f432865" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Tog/student/Explorer.class" afterPath="$PROJECT_DIR$/out/production/Tog/student/Explorer.class" />
       <change beforePath="$PROJECT_DIR$/src/student/Explorer.java" afterPath="$PROJECT_DIR$/src/student/Explorer.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="Explorer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="223" column="4" lean-forward="false" selection-start-line="223" selection-start-column="4" selection-end-line="223" selection-end-column="4" />
+            <state relative-caret-position="340">
+              <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1750#1756#0" expanded="true" />
@@ -26,6 +25,8 @@
                 <element signature="e#2254#2266#0" expanded="true" />
                 <element signature="e#4719#4725#0" expanded="true" />
                 <element signature="e#4858#4864#0" expanded="true" />
+                <element signature="e#8394#8412#0" expanded="true" />
+                <element signature="e#8508#8526#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -343,12 +344,12 @@
       <workItem from="1521922442776" duration="1566000" />
       <workItem from="1521969031817" duration="5793000" />
       <workItem from="1522260516002" duration="194000" />
-      <workItem from="1522260850404" duration="28242000" />
+      <workItem from="1522260850404" duration="30018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35795000" />
+    <option name="totallyTimeSpent" value="37571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="697" height="735" extended-state="0" />
@@ -405,6 +406,8 @@
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
             <element signature="e#4858#4864#0" expanded="true" />
+            <element signature="e#8394#8412#0" expanded="true" />
+            <element signature="e#8508#8526#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -492,6 +495,8 @@
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
             <element signature="e#4858#4864#0" expanded="true" />
+            <element signature="e#8394#8412#0" expanded="true" />
+            <element signature="e#8508#8526#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/student/Explorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="223" column="4" lean-forward="false" selection-start-line="223" selection-start-column="4" selection-end-line="223" selection-end-column="4" />
+        <state relative-caret-position="340">
+          <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1750#1756#0" expanded="true" />
@@ -666,6 +671,8 @@
             <element signature="e#2254#2266#0" expanded="true" />
             <element signature="e#4719#4725#0" expanded="true" />
             <element signature="e#4858#4864#0" expanded="true" />
+            <element signature="e#8394#8412#0" expanded="true" />
+            <element signature="e#8508#8526#0" expanded="true" />
           </folding>
         </state>
       </provider>
