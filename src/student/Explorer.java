@@ -121,7 +121,9 @@ public class Explorer {
             visited.add(node);
             if (node == state.getExit()) {
                 System.out.println("Route found");
-                System.out.println(visited);
+                System.out.println(node.hashCode());
+                System.out.println(node.getId());
+                //System.out.println(visited);
                 //DO SOMETHING
 //                for(Node tile: visited){
 //
@@ -218,4 +220,15 @@ public class Explorer {
 //        }
 //        return ;
 //    }
+
+    
+    public static int [] dijkstraAlg(EscapeState state){
+        //Initialize simple arrays to store distances and nodes
+        int[] distance =  new int[state.getVertices().size()];
+        int[] parent = new int[state.getVertices().size()];
+        boolean [] visited = new boolean[state.getVertices().size()];
+
+
+        //TODO: Write dijkstra algorithm to find shortest route
+    }
 }
