@@ -223,18 +223,35 @@ public class Explorer {
 
 
     public static int [] dijkstraAlg(EscapeState state){
-        //Initialize simple arrays to store distances and nodes
-        LinkedHashMap<Integer, Integer> distance = new LinkedHashMap<Integer, Integer>(state.getVertices().size());
-        LinkedHashMap<Integer, Integer> parent = new LinkedHashMap<Integer, Integer>(state.getVertices().size());
 
-        //int[] distance =  new int[state.getVertices().size()];    //Might change these back
-        //int[] parent = new int[state.getVertices().size()];
-        boolean [] visited = new boolean[state.getVertices().size()];
+        LinkedHashMap<Node, Integer> distance = new LinkedHashMap<Node, Integer>(state.getVertices().size()); //Linked hash map (id, distance from source)
+        LinkedList<Node> queue = new LinkedList<>();//A queue of all nodes in graph
+        Set<Node> visited = new HashSet<>();//Set to hold all visited nodes
+        LinkedHashMap<Node, Node> parent = new LinkedHashMap<Node, Node>(state.getVertices().size());//Nodes that map to parent Nodes
 
+//        LinkedHashMap<Integer, Boolean> visited = new LinkedHashMap<Integer, Boolean>(state.getVertices().size());
+//        int[] distance =  new int[state.getVertices().size()];    //Might change these back
+//        int[] parent = new int[state.getVertices().size()];
+//        boolean [] visited = new boolean[state.getVertices().size()];
+
+        queue.add(state.getCurrentNode());//Init queue with starting location
+
+        //Init all distance values to max
         for (Node n: state.getVertices()){
-            distance.put(n.hashCode(), Integer.MAX_VALUE);
+            distance.put(n, Integer.MAX_VALUE);
         }
-        //distance[state.]
+        distance.put(state.getCurrentNode(), 0);
+
+        while (!queue.isEmpty()){
+            Node a = queue.pop();//remove node from queue
+            visited.add(a);//add node to visited set
+
+            Set<Node> tempNodes = new HashSet<>(a.getNeighbours());//Temporary set for neighbouring nodes
+            Set<Edge> tempEdges = new HashSet<>(a.getExits()); //Temporary set for outgoing edges
+
+        }
+
+
 
         //TODO: Write dijkstra algorithm to find shortest route
     }
