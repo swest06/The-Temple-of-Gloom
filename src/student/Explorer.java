@@ -243,16 +243,34 @@ public class Explorer {
         distance.put(state.getCurrentNode(), 0);
 
         while (!queue.isEmpty()){
+
             Node a = queue.pop();//remove node from queue
             visited.add(a);//add node to visited set
 
-            Set<Node> tempNodes = new HashSet<>(a.getNeighbours());//Temporary set for neighbouring nodes
+            //Set<Node> tempNodes = new HashSet<>(a.getNeighbours());//Temporary set for neighbouring nodes (MAYBE NOT NEEDED)
             Set<Edge> tempEdges = new HashSet<>(a.getExits()); //Temporary set for outgoing edges
+            List<Edge> edgeOrdered = new ArrayList<>(); //Simple array to hold edges in order of length
+
+            for (Edge e: tempEdges) {
+                edgeOrdered.add(e);
+            }
+            edgeOrdered =
 
         }
 
-
-
         //TODO: Write dijkstra algorithm to find shortest route
+    }
+
+    public static List<Edge> bubbleSort(List<Edge> list){
+        for (int i = 0; i < list.size()-1 ; i++) {
+            for (int j = 0; j < list.size() - i - 1 ; j++) {
+                if(list.get(j).length > list.get(j+1).length){
+                    Edge x = list.get(j);
+                    list.set(j, list.get(j+1));
+                    list.set(j+1, x);
+                }
+            }
+        }
+        return list;
     }
 }
