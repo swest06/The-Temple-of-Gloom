@@ -222,17 +222,11 @@ public class Explorer {
 //    }
 
 
-    public static int [] dijkstraAlg(EscapeState state){
-
+    public static List<Node> dijkstraAlg(EscapeState state){
         LinkedHashMap<Node, Integer> distance = new LinkedHashMap<Node, Integer>(state.getVertices().size()); //Linked hash map (id, distance from source)
         LinkedList<Node> queue = new LinkedList<>();//A queue of all nodes in graph
         Set<Node> visited = new HashSet<>();//Set to hold all visited nodes
         LinkedHashMap<Node, Node> parent = new LinkedHashMap<Node, Node>(state.getVertices().size());//Nodes that map to parent Nodes
-
-//        LinkedHashMap<Integer, Boolean> visited = new LinkedHashMap<Integer, Boolean>(state.getVertices().size());
-//        int[] distance =  new int[state.getVertices().size()];    //Might change these back
-//        int[] parent = new int[state.getVertices().size()];
-//        boolean [] visited = new boolean[state.getVertices().size()];
 
         queue.add(state.getCurrentNode());//Init queue with starting location
 
@@ -260,13 +254,20 @@ public class Explorer {
             for (Edge e: edgeOrdered) {
                 if(distance.get(a) + e.length() < distance.get(e.getOther(a))){//Check if new distance is shorter
                     distance.put(e.getOther(a), distance.get(a) + e.length()); //Update distance values for edge destinations
-
+                    parent.put(e.getOther(a), a);
+                    queue.add(e.getOther(a));
                 }
             }
-
         }
-
-        //TODO: Write dijkstra algorithm to find shortest route
+        //Creates list that contains route from exit to current node
+        List<Node> route = new ArrayList<>();
+        Node childN = state.getExit();
+        route.add(childN);
+        while (!route.contains(state.getCurrentNode())){
+            childN = parent.get(childN);
+            route.add(childN);
+        }
+        return route;
     }
 
     public static List<Edge> bubbleSort(List<Edge> list){
