@@ -240,9 +240,9 @@ public class Explorer {
         for (Node n: state.getVertices()){
             distance.put(n, Integer.MAX_VALUE);
         }
-        distance.put(state.getCurrentNode(), 0);
+        distance.put(state.getCurrentNode(), 0);//Distance to starting distance is set to 0
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()){// While there are still nodes to visit
 
             Node a = queue.pop();//remove node from queue
             visited.add(a);//add node to visited set
@@ -252,9 +252,17 @@ public class Explorer {
             List<Edge> edgeOrdered = new ArrayList<>(); //Simple array to hold edges in order of length
 
             for (Edge e: tempEdges) {
-                edgeOrdered.add(e);
+                if(!visited.contains(e.getOther(a))){
+                    edgeOrdered.add(e);//Only add edges for the nodes that have been unvisited
+                }
             }
-            edgeOrdered =
+            edgeOrdered = bubbleSort(edgeOrdered);//create linked list with edges in order of length
+            for (Edge e: edgeOrdered) {
+                if(distance.get(a) + e.length() < distance.get(e.getOther(a))){//Check if new distance is shorter
+                    distance.put(e.getOther(a), distance.get(a) + e.length()); //Update distance values for edge destinations
+
+                }
+            }
 
         }
 
