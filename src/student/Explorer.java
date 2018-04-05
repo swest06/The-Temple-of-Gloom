@@ -107,36 +107,37 @@ public class Explorer {
      */
     public void escape(EscapeState state) {
 
-        //Queue for BFS search
-        LinkedList<Node> queue = new LinkedList<Node>();
-        queue.add(state.getCurrentNode());
-
-        //Set to hold visited Nodes
-        LinkedList<Node> visited = new LinkedList<Node>();
-
-        //Keep finding child Nodes until destination is reached
-        while(!queue.isEmpty()) {
-            //Remove node from queue and add to visited list
-            Node node = queue.remove();
-            visited.add(node);
-            if (node == state.getExit()) {
-                System.out.println("Route found");
-                System.out.println(node.hashCode());
-                System.out.println(node.getId());
-                //System.out.println(visited);
-                //DO SOMETHING
-//                for(Node tile: visited){
+        System.out.println(dijkstraAlg(state));
+//        //Queue for BFS search
+//        LinkedList<Node> queue = new LinkedList<Node>();
+//        queue.add(state.getCurrentNode());
 //
-//                }
-            }
-
-            //Add neighbouring nodes to queue
-            for (Node node1: node.getNeighbours()) {
-
-                if(!visited.contains(node1)){
-                    queue.add(node1);
-            }
-        }
+//        //Set to hold visited Nodes
+//        LinkedList<Node> visited = new LinkedList<Node>();
+//
+//        //Keep finding child Nodes until destination is reached
+//        while(!queue.isEmpty()) {
+//            //Remove node from queue and add to visited list
+//            Node node = queue.remove();
+//            visited.add(node);
+//            if (node == state.getExit()) {
+//                System.out.println("Route found");
+//                System.out.println(node.hashCode());
+//                System.out.println(node.getId());
+//                //System.out.println(visited);
+//                //DO SOMETHING
+////                for(Node tile: visited){
+////
+////                }
+//            }
+//
+//            //Add neighbouring nodes to queue
+//            for (Node node1: node.getNeighbours()) {
+//
+//                if(!visited.contains(node1)){
+//                    queue.add(node1);
+//            }
+//        }
 
 
 //        while (state.getCurrentNode() != state.getExit()){
@@ -199,7 +200,7 @@ public class Explorer {
 //            System.out.println(state.getVertices().size());
 
 
-        }
+//        }
 
         //TODO: Escape from the cavern before time runs out
     }
@@ -221,7 +222,12 @@ public class Explorer {
 //        return ;
 //    }
 
-
+    /**
+     * Dijkstra's Algorithm
+     * By comparing the weights of all edges in the graph, returns a list of Nodes in traversal order containing the shortest route
+     * @param state the information available at the current state
+     * @return list
+     */
     public static List<Node> dijkstraAlg(EscapeState state){
         LinkedHashMap<Node, Integer> distance = new LinkedHashMap<Node, Integer>(state.getVertices().size()); //Linked hash map (id, distance from source)
         LinkedList<Node> queue = new LinkedList<>();//A queue of all nodes in graph
@@ -236,8 +242,8 @@ public class Explorer {
         }
         distance.put(state.getCurrentNode(), 0);//Distance to starting distance is set to 0
 
+        //Actual algorithm
         while (!queue.isEmpty()){// While there are still nodes to visit
-
             Node a = queue.pop();//remove node from queue
             visited.add(a);//add node to visited set
 
@@ -270,6 +276,11 @@ public class Explorer {
         return route;
     }
 
+    /**
+     * Bubble sort algorithm that re-arranges list order from smallest to largest values
+     * @param list a list of Edge objects
+     * @return list
+     */
     public static List<Edge> bubbleSort(List<Edge> list){
         for (int i = 0; i < list.size()-1 ; i++) {
             for (int j = 0; j < list.size() - i - 1 ; j++) {
