@@ -40,12 +40,12 @@ public class Explorer {
     public void explore(ExplorationState state) {
         //Init Stack for current path and Set for visited locations
         Stack<Long> path = new Stack<>();
-        Set <Long> seen = new HashSet<Long>();
+        Set <Long> seen = new HashSet<>();
         path.add(state.getCurrentLocation());
         while(state.getDistanceToTarget() > 0){
 
             //List of neighbours
-            List <NodeStatus> neighbours =  new ArrayList<NodeStatus>(state.getNeighbours());
+            List <NodeStatus> neighbours =  new ArrayList<>(state.getNeighbours());
 
             //Add current location to Set
             if (!seen.contains(state.getCurrentLocation())){
@@ -53,7 +53,7 @@ public class Explorer {
             }
 
             //Create list of unvisited neighbours
-            List<NodeStatus> temp = new ArrayList<NodeStatus>();
+            List<NodeStatus> temp = new ArrayList<>();
             for (NodeStatus n: neighbours){
                 if (!seen.contains(n.getId())){
                     temp.add(n);
@@ -108,131 +108,20 @@ public class Explorer {
     public void escape(EscapeState state) {
 
         List<Node> route;
-        route = dijkstraAlg(state);
-        Collections.reverse(route);
+        route = dijkstraAlg(state);//Assigns fastest route
+        Collections.reverse(route);//Corrects order
+
         while (state.getCurrentNode() != state.getExit()){
             for (Node location: route) {
-                //state.pickUpGold();
+                if(state.getCurrentNode().getTile().getGold() > 0){
+                    state.pickUpGold();
+                }
                 if(location != state.getCurrentNode()){
                     state.moveTo(location);
                 }
             }
         }
-
-
-//        //Queue for BFS search
-//        LinkedList<Node> queue = new LinkedList<Node>();
-//        queue.add(state.getCurrentNode());
-//
-//        //Set to hold visited Nodes
-//        LinkedList<Node> visited = new LinkedList<Node>();
-//
-//        //Keep finding child Nodes until destination is reached
-//        while(!queue.isEmpty()) {
-//            //Remove node from queue and add to visited list
-//            Node node = queue.remove();
-//            visited.add(node);
-//            if (node == state.getExit()) {
-//                System.out.println("Route found");
-//                System.out.println(node.hashCode());
-//                System.out.println(node.getId());
-//                //System.out.println(visited);
-//                //DO SOMETHING
-////                for(Node tile: visited){
-////
-////                }
-//            }
-//
-//            //Add neighbouring nodes to queue
-//            for (Node node1: node.getNeighbours()) {
-//
-//                if(!visited.contains(node1)){
-//                    queue.add(node1);
-//            }
-//        }
-
-
-//        while (state.getCurrentNode() != state.getExit()){
-//            //Assign current location to 'here'
-//            Node here = state.getCurrentNode();
-//
-//            //Get neighbouring Nodes
-//            Set<Node> neighbours = here.getNeighbours();
-//
-//            //List of visited nodes
-//            List<Node> steppedOn = new ArrayList<>();
-//            steppedOn.add(state.getCurrentNode());
-//
-//            //Add neighbours to List
-//            List<Node> neigh = new ArrayList<>();
-//            neigh.addAll(here.getNeighbours());
-//
-//            Node node = neigh.get(0);
-//            Set node2 = node.getNeighbours();
-//
-//            //Find route from exit
-//            Stack<Node> stack = new Stack();
-//            stack.push(state.getExit());
-//            System.out.println("Finding route");
-//            while (stack.peek() != state.getCurrentNode()){
-//                List<Node> goodFriends = new ArrayList<>();
-//                goodFriends.addAll(stack.peek().getNeighbours());
-//
-//                Node moveHere = goodFriends.get(0);
-//                stack.push(moveHere);
-//            }
-//
-//            System.out.println("Route found");
-//            while (state.getCurrentNode() != state.getExit()){
-//                stack.pop();
-//                state.moveTo(stack.peek());
-//            }
-
-
-
-
-//            boolean fin = false;
-//            while (!fin){
-//                for (Node n: neighbours){
-//
-//                }
-//            }
-
-//            System.out.println(here.getEdge(state.getExit()));
-
-//            System.out.println("1");
-//            Edge nextEdge = here.getEdge(here);
-//            System.out.println("2");
-//            Node nextMove = nextEdge.getSource();
-//            System.out.println("3");
-//            state.moveTo(nextMove);
-//            System.out.println(here.getEdge(here));
-
-//            System.out.println(state.getCurrentNode());
-//            System.out.println(state.getVertices().size());
-
-
-//        }
-
-        //TODO: Escape from the cavern before time runs out
     }
-
-//    List<Node> route(Set<Node> neigh, EscapeState state){
-//        List<Node> r;
-//        boolean fin = false;
-//        while (!fin){
-//            for (Node n: neigh ){
-//                if (n == state.getExit());{
-//                    fin = true;
-//                    return r.add(n);
-//                }else{
-//
-//                    return r.add(route(n.getNeighbours(), state));
-//                }
-//            }
-//        }
-//        return ;
-//    }
 
     /**
      * Dijkstra's Algorithm
@@ -241,10 +130,10 @@ public class Explorer {
      * @return list
      */
     public static List<Node> dijkstraAlg(EscapeState state){
-        LinkedHashMap<Node, Integer> distance = new LinkedHashMap<Node, Integer>(state.getVertices().size()); //Linked hash map (id, distance from source)
+        LinkedHashMap<Node, Integer> distance = new LinkedHashMap<>(state.getVertices().size()); //Linked hash map (id, distance from source)
         LinkedList<Node> queue = new LinkedList<>();//A queue of all nodes in graph
         Set<Node> visited = new HashSet<>();//Set to hold all visited nodes
-        LinkedHashMap<Node, Node> parent = new LinkedHashMap<Node, Node>(state.getVertices().size());//Nodes that map to parent Nodes
+        LinkedHashMap<Node, Node> parent = new LinkedHashMap<>(state.getVertices().size());//Nodes that map to parent Nodes
 
         queue.add(state.getCurrentNode());//Init queue with starting location
 
