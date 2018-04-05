@@ -107,7 +107,19 @@ public class Explorer {
      */
     public void escape(EscapeState state) {
 
-        System.out.println(dijkstraAlg(state));
+        List<Node> route;
+        route = dijkstraAlg(state);
+        Collections.reverse(route);
+        while (state.getCurrentNode() != state.getExit()){
+            for (Node location: route) {
+                //state.pickUpGold();
+                if(location != state.getCurrentNode()){
+                    state.moveTo(location);
+                }
+            }
+        }
+
+
 //        //Queue for BFS search
 //        LinkedList<Node> queue = new LinkedList<Node>();
 //        queue.add(state.getCurrentNode());
