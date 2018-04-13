@@ -110,12 +110,16 @@ public class Explorer {
         List<Node> route;
         route = dijkstraAlg(state);//Assigns fastest route
         Collections.reverse(route);//Corrects order
+        //Set<Node> visited = new HashSet<>();//Keeps track of all visited nodes collecting gold
 
         while (state.getCurrentNode() != state.getExit()){
             for (Node location: route) {
                 if(state.getCurrentNode().getTile().getGold() > 0){
                     state.pickUpGold();
                 }
+//                if(/*something about time remaining*/){
+//                    //walk around and collect gold
+//                }
                 if(location != state.getCurrentNode()){
                     state.moveTo(location);
                 }
@@ -167,6 +171,8 @@ public class Explorer {
             }
         }
         //Creates list that contains route from exit to current node
+        int steps = distance.get(state.getExit());
+
         List<Node> route = new ArrayList<>();
         Node childN = state.getExit();
         route.add(childN);
