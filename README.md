@@ -144,4 +144,4 @@ including its row and column, the type of tile, and the amount of gold on that s
 ## Credits
 
 Thank you to Eric Perdew, Ryan Pindulic, and Ethan Cecchetti from the Department of 
-Computer Science at Cornell for the basis of this coursework.
+Computer Science at Cornell for the basis of this project.
