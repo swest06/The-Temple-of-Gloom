@@ -5,10 +5,10 @@
 The aims of this project were to:
 
 * Experiment with graph traversal algorithms (DFS, BFS, Dijkstra)
-* learn to work with packages,
-* become accustomed to the features of Java 9,
-* learn to see the use of Java concurrency via the threading model,
-* to see the workings of a Java Swing GUI application.
+* Learn to work with packages,
+* Become accustomed to the features of Java 9,
+* Learn to see the use of Java concurrency via the threading model,
+* To see the workings of a Java Swing GUI application.
 
 
 ## Overview
