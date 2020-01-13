@@ -1,53 +1,41 @@
-# Coursework Assignment Three
-
-## Philip Hammond and the Temple of Gloom!
+# Temple of Gloom Maze Solver
 
 ## Objectives
 
-The aims of this coursework assignment are to:
-* learn how to understand and extend an existing code based,
-* focus on the essential (and relevant) packages within that code base, 
-* work with packages,
+The aims of this project were to:
+
+* Experiment with graph traversal algorithms (DFS, BFS, Dijkstra)
+* learn to work with packages,
 * become accustomed to the features of Java 9,
-* to see the use of Java concurrency via the threading model,
+* learn to see the use of Java concurrency via the threading model,
 * to see the workings of a Java GUI application.
 
-The code that you actually have to write is quite small but the amount you have to read is quite 
-large. We will be running additional tutorials to help you with this assignment 
-as we understand that it is complex but you will learn a great deal from completing the task.
 
 ## Overview
 
-In this assignment, you will help the explorer and professor of archeology *Philip Hammond* 
-claim the *Orb of Lots*, which is located in the *Temple of Gloom*. 
-You will help him explore an unknown cavern under the temple, claim the orb, and escape 
-before the entrance collapses. There will be great rewards for those who help Philip fill 
-his pockets with gold on the way out. There are two major phases to this assignment:
+There are two major phases during the running of this application:
 * the *exploration phase*, and
 * the *escape phase*,
-
-each of which involves writing a separate method in Java. We explain these phases in
-detail after presenting some further introductory material.
 
 ## The exploration phase
 
 On the way to the Orb (see the figure below), the layout of the cavern is unknown. 
-You know only the status of the tile on which you are standing and those immediately around 
-you and perhaps those that you remember. Your goal is to make it to the Orb in as 
-few steps as possible. This is not a blind search, as you will know the distance to the Orb. This
+Only the status of the tile on which the explorer is standing and those immediately around 
+is known. 
+My goal was to make it to the Orb in as 
+few steps as possible. This was not a blind search, as the distance to the Orb was known. This
 is equal to the number of tiles on the shortest path to the Orb, if there weren’t walls or 
 obstacles in the way.
 
 ![Searching for the Orb during the exploration phase](exploration.png)
 
-You will develop the solution to this phase in the method `explore()` in the class `Explorer` 
-within the package `student`. There is no time limit on the number of steps you can take, 
-but you will receive a higher score for finding the Orb in fewer steps. 
-To pick up the Orb, simply return from this method once you have arrived on its tile. 
-Returning when Philip is not on the Orb tile will cause an exception to be thrown, halting the game.
+The solution to this phase was implemented in the method `explore()` in the class `Explorer`.
+There is no time limit on the number of steps taken, 
+but a higher score is accumulated for finding the Orb in fewer steps. 
 
-When writing method `explore()`, you are given an `ExplorationState` object to learn about 
-the environment around you. Every time you make a move, this object automatically changes 
+
+Within the method `explore()`, an `ExplorationState` object representing the explorer is used to learn about 
+the environment around them. Every time a move is made, this object automatically changes 
 to reflect the new location of the explorer. This object includes the following methods:
 
 * `long getCurrentLocation()`:
@@ -67,13 +55,7 @@ to reflect the new location of the explorer. This object includes the following 
 > move the explorer to the tile with ID `id`. 
 > This fails if that tile is not adjacent to the current location. 
 
-Note that function `getNeighbours()` returns a collection of `NodeStatus` objects. 
-This is simply an object that contains, for each neighbour, the ID corresponding to that neighbour, 
-as well as that neighbours distance from the Orb. 
-You can examine the documentation for this class for more information on how to use `NodeStatus` objects. 
-A suggested first implementation that will always find the Orb, but likely as 
-not wont receive a large bonus score, is a *depth-first* search. 
-More advanced solutions might incorporate the distance of tiles from the Orb.
+A Depth First Search Algorithm was implemented to find the shortest path to the orb.
 
 ## The escape phase
 
