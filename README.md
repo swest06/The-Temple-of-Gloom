@@ -116,9 +116,9 @@ change to reflect the new location of the explorer. This object includes the fol
 
 > collect all gold on the current tile. 
 > This will fail if there is no gold on the current tile or it has already been collected.
-
 <br/>
-#### Dijkstra's weighted graph traversal algorithm was implemented 
+
+#### Dijkstra's weighted graph traversal algorithm was implemented in the `escape()` method to find the shortest path to the exit.
 
 ## The provided code
 
