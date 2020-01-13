@@ -8,7 +8,7 @@ The aims of this project were to:
 * learn to work with packages,
 * become accustomed to the features of Java 9,
 * learn to see the use of Java concurrency via the threading model,
-* to see the workings of a Java GUI application.
+* to see the workings of a Java Swing GUI application.
 
 
 ## Overview
@@ -53,47 +53,41 @@ to reflect the new location of the explorer. This object includes the following 
 * `void moveTo(long id)`:
 
 > move the explorer to the tile with ID `id`. 
-> This fails if that tile is not adjacent to the current location. 
-
+> This fails if that tile is not adjacent to the current location.   
+<br/>
 
 #### A Depth First Search Algorithm was implemented within the `explore()` method to find the shortest path to the orb.
+<br/>
 
 ## The escape phase
 
-After picking up the Orb, the walls of the cavern shift and a new layout is generated — ouch! 
+After picking up the Orb, the walls of the cavern shift and a new layout is generated.
 In addition, piles of gold fall onto the ground. 
-Luckily, underneath the Orb is a map, revealing the full cavern to you. 
-However, the stress of the moving walls has compromised the integrity of the cavern, 
-beginning a time limit after which the ceiling will collapse crushing Philip! 
-Additionally, picking up the Orb activated the traps and puzzles of the cavern, 
-causing different edges of the graph to have different weights. 
+A time limit is started and different edges of the graph to have different weights. 
 The goal of the escape phase is to make it to the entrance of the cavern before it collapses. 
 
 ![Collecting gold during the escape phase](escape.png)
 
-However, a score component is based on two additional factors:
+A score component is based on two additional factors:
 
-1. The amount of gold that you pick up during the escape phase, and
-1. Your score from the exploration phase.
+1. The amount of gold picked up during the escape phase, and
+1. the score from the exploration phase.
 
-Your score will simply be the amount of gold picked up times the score from the exploration phase.
 
-You will write your solution code to this part of the problem in a function `escape()` in the class 
-`Explorer` in the package `student`. To escape, simply return from this method while standing 
-on the entrance tile. 
+The solution code to this part of the problem was written in the method `escape()` in the class 
+`Explorer`. Returning from this method while standing 
+on the entrance tile will allow the explorer to escape the maze. 
 Returning while at any other position, or failing to return before time runs out, 
 will cause the game to end and result in a score of 0.
 
-An important point to clarify is that time during this phase is not defined as the CPU time your 
-solution takes to compute but rather the number of steps taken by the explorer: 
-the time remaining decrements regardless of how long you spent deciding which move to make. 
-Because of this, you can be guaranteed that you will always be given enough time 
-to escape the cavern should you take the shortest path out. 
-Note that there are differing amounts of gold on the different tiles. Picking up gold on the tile you are 
-standing on takes no time.
+An important point to clarify is that time during this phase is not defined as the CPU time but rather the number of steps taken by the explorer: 
+the time remaining decrements regardless of how long is spent deciding which move to make. 
+Because of this, it is guaranteed that there will always be given enough time 
+to escape the cavern should the shortest path out be taken. 
 
-When writing this method, you are given an `EscapeState` object to learn about the environment 
-around you. Every time you make a move, this object will automatically 
+
+An `EscapeState` object is used to learn about the environment 
+around the explorer. Every time a move is made, this object will automatically 
 change to reflect the new location of the explorer. This object includes the following methods:
 
 * `Node getCurrentNode()`:
@@ -123,14 +117,8 @@ change to reflect the new location of the explorer. This object includes the fol
 > collect all gold on the current tile. 
 > This will fail if there is no gold on the current tile or it has already been collected.
 
-Class `Node` (and the corresponding class `Edge`) has methods that are likely to be useful. 
-Look at the documentation or code for these classes to learn what additional methods are available. 
-A good starting point is to write an implementation that will always escape the cavern before 
-time runs out. 
-From there, you can consider trying to pick up gold to optimise your score using more advanced techniques.
-
-However, the most important part is always that your solution successfully escapes the cavern – 
-if you improve on your solution, make sure that it never fails to escape in time!
+<br/>
+#### Dijkstra's weighted graph traversal algorithm was implemented 
 
 ## The provided code
 
@@ -179,83 +167,23 @@ it will run the program on the same map (the map generated by that seed) every t
 
 ## The GUI
 
-When running your program (except in headless mode), you are presented with a GUI where you can 
+When running the program, you are presented with a GUI where you can 
 watch the explorer making moves. When the GUI is running, each call to `moveTo()` 
-blocks until the corresponding move completes on the GUI – that is, when you make a call to `moveTo()`, 
-that call will not return and consequently your code will not continue running until the 
-corresponding animation on the GUI has completed. 
-For that reason, running your code in headless mode will generally 
-complete faster than running it with the GUI.
+blocks until the corresponding move completes on the GUI.
 
 You can use the slider on the right side of the GUI to increase or decrease the speed of the explorer.
-Increasing the speed will make the animation finish faster. Decreasing the speed might be useful for 
-debugging purposes and to get a better understanding of what exactly your solution is doing. Also, a timer 
+Increasing the speed will make the animation finish faster. A timer 
 displays the number of steps remaining during the escape phase (both as a number and a percentage). 
-A `Print Seed` button allows you to print the seed to the console to easily copy and paste into the 
-program arguments to retry your solution on a particularly difficult map.
 
 You can also see the `bonus` and the number of coins collected, 
 followed by the final score computed as the product of these. 
-The bonus multiplier begins as `1.3` and slowly decreases as you take more and more steps 
+The bonus multiplier begins as `1.3` and slowly decreases as more and more steps are taken 
 during the explore stage (after which it is fixed), while the number of coins increases 
 as you collect them during the escape phase.
 
 Finally, click on any square in the map to see more detailed information about it on the right, 
 including its row and column, the type of tile, and the amount of gold on that square.
 
-## The deliverables
-
-Your submission will be automatically cloned on the due date. 
-You should upload your classes, documentation, and unit tests, as part of your submission. 
-You should include full `javadoc` for your classes (most of which is provided for you anyway).
-
-You should include a `DOC.md` file detailing what the project is about and any limitations/problems 
-with your implementation. 
-You should also include, in that file, a list of the files/classes you have created/modified.
-
-You are encouraged to have everything ready well in advance – both the programming and 
-`pushing it to your repository – to avoid last-minute problems (e.g., GitHub may be down for maintenance).
-
-## Grading
-
-The assignment will be graded according to its ability to fulfil the requirements; 
-the simplicity, clarity, and generality of the code (including succinct but illustrative comments 
-and `JavaDoc`); and the compliance with good practices of coding, and version control as outlined 
-during the module (e.g., committing often and in small pieces, use of descriptive 
-commit messages, committing only source code and not binary or `.class` files).
-
-The vast majority of points on this assignment will come from a correct solution that always finds 
-the Orb and escapes before the time runs out, so your priority should be to make sure 
-that your code always does this successfully. 
-To receive full credit for the assignment, your solution must also get a reasonably high score 
-(achieved by optimising the bonus multiplier in the *explore phase* and collecting as many coins 
-as possible in the *escape phase*), so you should spend some time thinking about 
-ways to optimise your solution.
-
-While the amount of time your code takes to decide its next move does not factor into the 
-number of steps taken or the time remaining and consequently does not effect your score, 
-we cannot wait for your code forever and so must impose a timeout 
-when grading your code. When run in headless mode, your code should 
-take no longer than roughly 10 seconds to complete any single map. 
-Solutions that take significantly longer may be treated as if they did 
-not successfully complete and will likely receive low grades.
-
-The use of *Java Reflection mechanisms* is strictly forbidden and will result in significant penalties.
-
-## Collaboration Policy and Academic Integrity
-
-You may not look at anyone else's code, in any form, or show your code to anyone else, in any form. 
-You may not show or give your code to another person in the class. While you can talk to others 
-about the assignment at a high level, 
-your discussions should not include writing code or copying it down.
-
-If you don't know where to start, if you are lost, etc., please contact one of the teaching team 
-immediately. Do not wait. A little assistance can do wonders to get you off and running.
-
-Regardless of the times you choose to push your changes to GitHub, you should commit early and often. 
-In case of suspected plagiarism, your version control history will be used as additional evidence 
-to judge the case. It is in your best interest to commit very often (and to use adequate 
-commit messages) to make it clear that the process of creation is entirely your own.
 
 ## Credits
 
