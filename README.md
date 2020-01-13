@@ -55,7 +55,8 @@ to reflect the new location of the explorer. This object includes the following 
 > move the explorer to the tile with ID `id`. 
 > This fails if that tile is not adjacent to the current location. 
 
-A Depth First Search Algorithm was implemented to find the shortest path to the orb.
+
+#### A Depth First Search Algorithm was implemented within the `explore()` method to find the shortest path to the orb.
 
 ## The escape phase
 
